@@ -24,11 +24,13 @@
   .orgs {
     display: flex;
     min-height: 45px;
+    flex-wrap: wrap;
 
     .org {
       width: 40px;
       height: 40px;
       margin-right: 5px;
+      margin-bottom: 10px;
       border-radius: 5px;
       overflow: hidden;
 
