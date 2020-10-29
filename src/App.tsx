@@ -36,6 +36,13 @@ function App() {
         </div>
       );
     }
+
+    const { user } = data;
+    const infos: IInfos = formatInfos(user);
+    const highlights: IHighlights = fromatHighlights(user);
+    const orgs: IOrg[] = formatOrgs(user);
+    const stats: IStats = formatStats(user);
+    const repos: IRepo[] = formatRepos(user.repositories);
     return (
       <div className="container">
         <SideBar
@@ -56,15 +63,17 @@ function App() {
 
   if (loading) return render(true);
   if (error) {
-    return <p>Error :(</p>;
+    return (
+      <div className="error">
+        <p>The profile you are looking does not exist or have been removed.</p>
+        <div className="search-again">
+          <h2>Search again</h2>
+          <Search searchUser={searchUser} setLookup={setLookup} />
+        </div>
+      </div>
+    );
   }
 
-  const { user } = data;
-  const infos: IInfos = formatInfos(user);
-  const highlights: IHighlights = fromatHighlights(user);
-  const orgs: IOrg[] = formatOrgs(user);
-  const stats: IStats = formatStats(user);
-  const repos: IRepo[] = formatRepos(user.repositories);
   return render(false);
 }
 
