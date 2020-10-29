@@ -1,0 +1,76 @@
+@import '../../assets/scss/constants.scss';
+
+.bio {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    color: $main;
+  }
+
+  .infos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+
+    .name {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .profile {
+      font-size: 15px;
+      font-weight: bold;
+      margin: 5px 0;
+    }
+
+    .content {
+      font-size: 15px;
+      text-align: center;
+    }
+
+    &.shimmer {
+      height: 50px;
+
+      * {
+        opacity: 0;
+      }
+    }
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+
+    .icon {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+
+      img {
+        margin-right: 5px;
+        width: 14px;
+        height: 14px;
+      }
+
+      span {
+        font-size: 13px;
+        font-weight: 700;
+      }
+    }
+
+    &.shimmer {
+      height: 50px;
+
+      * {
+        opacity: 0;
+      }
+    }
+  }
+}
