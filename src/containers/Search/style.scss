@@ -1,0 +1,26 @@
+.search {
+  display: flex;
+  margin: 20px 0;
+  height: 25px;
+
+  button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    height: 100%;
+    outline: none;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  input {
+    border: none;
+    font-size: 15px;
+    font-family: -apple-system, 'Noto Sans HK', 'Roboto', 'Oxygen', 'Ubuntu',
+      'Droid Sans', sans-serif;
+    width: 100%;
+    outline: none;
+  }
+}
