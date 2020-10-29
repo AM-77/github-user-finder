@@ -1,0 +1,20 @@
+@import '../../assets/scss/constants.scss';
+
+.repos {
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-left: 10px;
+    color: $main;
+  }
+
+  .top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 20px;
+  }
+}
