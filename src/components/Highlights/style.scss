@@ -1,0 +1,42 @@
+@import '../../assets/scss/constants.scss';
+
+.highlights {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: $main;
+  }
+
+  .infos {
+    display: flex;
+    min-height: 45px;
+    flex-direction: column;
+
+    .icon {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+
+      img {
+        margin-right: 5px;
+        width: 14px;
+        height: 14px;
+      }
+
+      span {
+        font-size: 13px;
+        font-weight: 700;
+      }
+    }
+
+    &.shimmer * {
+      opacity: 0;
+    }
+  }
+}
