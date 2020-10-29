@@ -1,0 +1,93 @@
+@import '../../assets/scss/constants.scss';
+
+.repo {
+  display: flex;
+  flex-direction: column;
+  width: calc(33% - 20px);
+  min-width: 280px;
+  max-width: 450px;
+  background: $white;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 0 0 15px -3px $light-shadow;
+
+  .title {
+    font-size: 17px;
+    font-weight: 700;
+    color: $dark;
+    transition: color 150ms ease-in-out;
+
+    h4 {
+      font-weight: 700;
+    }
+
+    &:hover {
+      color: $main;
+    }
+  }
+
+  .description {
+    padding: 10px 0;
+    font-size: 14px;
+  }
+
+  .languages {
+    display: flex;
+    margin-bottom: 25px;
+
+    .language {
+      font-size: 10px;
+      font-weight: 700;
+      color: $white;
+      padding: 3px;
+      margin: 0 3px;
+      border-radius: 3px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .foot {
+    display: flex;
+    margin-top: auto;
+
+    .stars {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      color: $black;
+      height: 18px;
+
+      img {
+        height: 100%;
+        margin-left: 4px;
+      }
+    }
+
+    .homepage {
+      height: 20px;
+      margin-left: auto;
+      img {
+        height: 100%;
+      }
+    }
+  }
+
+  &.shimmer {
+    height: 200px;
+    * {
+      opacity: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .repo {
+    min-width: 100%;
+    max-width: 100%;
+    margin: 10px 0;
+  }
+}
