@@ -1,14 +1,39 @@
 import { gql } from '@apollo/client';
+import getDate from '../utils/iso-date';
 
+const { from, to } = getDate();
 const USER = gql`
   query user($login: String!) {
     user(login: $login) {
+      login
       avatarUrl
       bio
       company
-      # contributionsCollection
+      location
+      name
       createdAt
       email
+      twitterUsername
+      url
+      websiteUrl
+      isBountyHunter
+      isCampusExpert
+      isDeveloperProgramMember
+      isEmployee
+      isHireable
+      organizations(first: 100) {
+        nodes {
+          name
+          avatarUrl
+          url
+        }
+      }
+      contributionsCollection(from: "${from}", to: "${to}"){
+        totalCommitContributions
+      }
+      issues(first: 0) {
+        totalCount
+      }
       followers(first: 0) {
         totalCount
       }
@@ -18,20 +43,6 @@ const USER = gql`
       gists(first: 0) {
         totalCount
       }
-      isBountyHunter
-      isCampusExpert
-      isDeveloperProgramMember
-      isEmployee
-      isHireable
-      issues(first: 0) {
-        totalCount
-      }
-      location
-      name
-      # get orgs data
-      organizations(first: 0) {
-        totalCount
-      }
       # get packges data
       packages(first: 0) {
         totalCount
@@ -39,15 +50,27 @@ const USER = gql`
       pullRequests(first: 0) {
         totalCount
       }
-      repositories(first: 0) {
+      repositories( first: 6, orderBy: { field: STARGAZERS,  direction: DESC } ){
         totalCount
+        nodes {
+          name
+          url
+          homepageUrl
+          description
+          languages(first: 3) {
+            nodes{
+              name
+              color
+            }
+          }
+          stargazers {
+            totalCount
+          }
+        }
       }
       starredRepositories(first: 0) {
         totalCount
       }
-      twitterUsername
-      url
-      websiteUrl
     }
   }
 `;
