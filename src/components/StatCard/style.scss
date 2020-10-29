@@ -1,0 +1,40 @@
+@import '../../assets/scss/constants.scss';
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  align-items: center;
+  justify-content: center;
+  background: $white;
+  border-radius: 5px;
+  margin: 10px;
+  box-shadow: 0 0 15px -3px $light-shadow;
+
+  .title {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+
+  .value {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+
+    span {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    img {
+      width: 16px;
+      height: 16px;
+      margin-left: 5px;
+    }
+  }
+
+  &.shimmer * {
+    opacity: 0;
+  }
+}
