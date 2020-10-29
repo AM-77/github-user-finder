@@ -1,0 +1,44 @@
+@import '../../assets/scss/constants.scss';
+
+.organizations {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: $main;
+
+    span {
+      font-size: 12px;
+      background: $main;
+      color: $light;
+      padding: 2px 7px;
+      border-radius: 15px;
+    }
+  }
+
+  .orgs {
+    display: flex;
+    min-height: 45px;
+
+    .org {
+      width: 40px;
+      height: 40px;
+      margin-right: 5px;
+      border-radius: 5px;
+      overflow: hidden;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &.shimmer * {
+      opacity: 0;
+    }
+  }
+}
