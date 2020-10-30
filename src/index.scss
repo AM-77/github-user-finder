@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+HK&family=Roboto&family=Share+Tech&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
 @import './assets/scss/shimmer.scss';
 @import './assets/scss/constants.scss';
 
@@ -83,10 +82,16 @@ a {
   justify-items: center;
   align-items: center;
 
+  .not-found {
+    margin-top: 100px;
+    height: 180px;
+    padding: 0 20px;
+  }
+
   p {
-    margin-top: 120px;
     font-weight: 700;
     margin-bottom: 40px;
+    text-align: center;
   }
 
   .search-again {

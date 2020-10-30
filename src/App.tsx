@@ -13,6 +13,7 @@ import {
   formatInfos,
   formatOrgs,
 } from './utils/formaters';
+import notFoundIcon from './assets/svg/404.svg';
 
 function App() {
   const [login, setLogin] = useState<string>('AM-77');
@@ -65,6 +66,7 @@ function App() {
   if (error) {
     return (
       <div className="error">
+        <img className="not-found" src={notFoundIcon} alt="user not found" />
         <p>The profile you are looking does not exist or have been removed.</p>
         <div className="search-again">
           <h2>Search again</h2>
