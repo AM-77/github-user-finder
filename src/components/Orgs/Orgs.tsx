@@ -11,7 +11,11 @@ type props = {
 const Orgs: React.FC<props> = ({ orgs, isLoading }) => {
   const renderOrgs = (organizations: IOrg[]) => {
     if (organizations.length === 0)
-      return <p>You don’t belong to any organization yet!</p>;
+      return (
+        <div className="no-infos">
+          <span>Does not belong to any org yet.</span>
+        </div>
+      );
     return organizations.map(({ url, name, avatarUrl }) => (
       <div className="org" key={url}>
         <a href={url} title={name}>
